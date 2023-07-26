@@ -1,0 +1,25 @@
+import random
+
+def tebak_angka():
+    # Menghasilkan angka acak antara 1 dan 100
+    angka_rahasia = random.randint(1, 100)
+    percobaan = 0
+
+    while True:
+        try:
+            # Meminta pengguna untuk menebak angka
+            tebakan_pengguna = int(input("Tebak angka antara 1 dan 100: "))
+            percobaan += 1
+
+            if tebakan_pengguna == angka_rahasia:
+                print(f"Selamat! Anda berhasil menebak angka {angka_rahasia} dengan benar dalam {percobaan} percobaan.")
+                break
+            elif tebakan_pengguna < angka_rahasia:
+                print("Terlalu rendah! Coba lagi.")
+            else:
+                print("Terlalu tinggi! Coba lagi.")
+        except ValueError:
+            print("Input tidak valid. Harap masukkan angka yang valid.")
+
+if __name__ == "__main__":
+    tebak_angka()
